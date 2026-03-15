@@ -16,6 +16,11 @@ Finds command, shows preview, asks confirmation, then executes:
 wizdo compress old log files
 ```
 
+Auto-accept with `-y`:
+```bash
+wizdo -y list files
+```
+
 ## Installation
 
 ```bash
