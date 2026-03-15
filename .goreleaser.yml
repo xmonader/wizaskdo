@@ -102,7 +102,7 @@ release:
   prerelease: auto
   name_template: "{{.ProjectName}}-v{{.Version}}"
 
-homebrews:
+brews:
   - name: wizask
     repository:
       owner: xmonader
