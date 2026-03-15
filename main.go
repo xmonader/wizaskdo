@@ -12,7 +12,7 @@ import (
 )
 
 const (
-	defaultModel = "qwen/qwen-2.5-coder-32b-instruct"
+	defaultModel = "qwen/qwen3-coder:free"
 	apiURL       = "https://openrouter.ai/api/v1/chat/completions"
 	maxTokens    = 500
 	temperature  = 0.3
@@ -79,7 +79,12 @@ func main() {
 		os.Exit(1)
 	}
 
-	result, err := ask(prompt, apiKey)
+	model := os.Getenv("WIZASK_MODEL")
+	if model == "" {
+		model = defaultModel
+	}
+
+	result, err := ask(prompt, apiKey, model)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error: %v\n", err)
 		os.Exit(1)
@@ -88,7 +93,7 @@ func main() {
 	fmt.Println(result)
 }
 
-func ask(prompt, apiKey string) (string, error) {
+func ask(prompt, apiKey, model string) (string, error) {
 	sysTpl := template.Must(template.New("system").Parse(systemTemplate))
 	var sysBuf bytes.Buffer
 	if err := sysTpl.Execute(&sysBuf, nil); err != nil {
@@ -96,7 +101,7 @@ func ask(prompt, apiKey string) (string, error) {
 	}
 
 	req := Request{
-		Model: defaultModel,
+		Model: model,
 		Messages: []Message{
 			{Role: "system", Content: sysBuf.String()},
 			{Role: "user", Content: prompt},
