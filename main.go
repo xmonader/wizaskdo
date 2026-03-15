@@ -12,7 +12,7 @@ import (
 )
 
 const (
-	defaultModel = "meta-llama/llama-3.2-3b-instruct:free"
+	defaultModel = "liquid/lfm2-8b-a1b"
 	apiURL       = "https://openrouter.ai/api/v1/chat/completions"
 	maxTokens    = 500
 	temperature  = 0.3

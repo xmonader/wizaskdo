@@ -29,12 +29,12 @@ Add to your `~/.bashrc` or `~/.zshrc` for persistence.
 
 ## Configuration
 
-**Model selection** (optional) - defaults to free Llama 3.2:
+**Model selection** (optional) - defaults to ultra-cheap LFM2:
 
 ```bash
-export WIZASK_MODEL=meta-llama/llama-3.2-3b-instruct:free  # Free, fast (default)
-export WIZASK_MODEL=qwen/qwen3-coder:free          # Free, coding-focused
-export WIZASK_MODEL=minimax/minimax-m2.5:free       # Free, large context
+export WIZASK_MODEL=liquid/lfm2-8b-a1b            # ~$0.00000001/1k (default)
+export WIZASK_MODEL=qwen/qwen2.5-coder-7b-instruct # ~$0.00000003/1k, coding
+export WIZASK_MODEL=meta-llama/llama-3.2-3b-instruct:free  # Free (rate-limited)
 ```
 
 See all models: https://openrouter.ai/models
@@ -53,7 +53,7 @@ Add -delete to remove them (be careful!).
 
 ## Model
 
-Defaults to `qwen/qwen3-coder:free` - **free**, coding-specialized model.
+Defaults to `liquid/lfm2-8b-a1b` - **~$0.00000001/1k tokens** (extremely cheap).
 Override with `WIZASK_MODEL` env var.
 
 ## License
