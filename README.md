@@ -2,8 +2,8 @@
 
 Ask AI for terminal commands directly from your shell.
 
-[![CI](https://github.com/xmonader/wizask/actions/workflows/ci.yml/badge.svg)](https://github.com/xmonader/wizask/actions/workflows/ci.yml)
-[![Release](https://github.com/xmonader/wizask/actions/workflows/release.yml/badge.svg)](https://github.com/xmonader/wizask/actions/workflows/release.yml)
+[![CI](https://github.com/xmonader/wizaskdo/actions/workflows/ci.yml/badge.svg)](https://github.com/xmonader/wizaskdo/actions/workflows/ci.yml)
+[![Release](https://github.com/xmonader/wizaskdo/actions/workflows/release.yml/badge.svg)](https://github.com/xmonader/wizaskdo/actions/workflows/release.yml)
 
 ## Tools
 
@@ -28,15 +28,15 @@ wizdo -y list files
 
 ### Pre-built Binaries
 
-Download from [GitHub Releases](https://github.com/xmonader/wizask/releases):
+Download from [GitHub Releases](https://github.com/xmonader/wizaskdo/releases):
 
 ```bash
 # Linux/macOS
-curl -L https://github.com/xmonader/wizask/releases/latest/download/wizask_Linux_x86_64.tar.gz | tar xz
+curl -L https://github.com/xmonader/wizaskdo/releases/latest/download/wizask_Linux_x86_64.tar.gz | tar xz
 sudo mv wizask wizdo /usr/local/bin/
 
 # Or use wget
-wget https://github.com/xmonader/wizask/releases/latest/download/wizask_Linux_x86_64.tar.gz
+wget https://github.com/xmonader/wizaskdo/releases/latest/download/wizask_Linux_x86_64.tar.gz
 tar xzf wizask_Linux_x86_64.tar.gz
 sudo mv wizask wizdo /usr/local/bin/
 ```
@@ -53,8 +53,8 @@ brew install wizask
 Requires Go 1.21+:
 
 ```bash
-git clone https://github.com/xmonader/wizask.git
-cd wizask
+git clone https://github.com/xmonader/wizaskdo.git
+cd wizaskdo
 make build
 sudo make install
 ```
@@ -62,8 +62,8 @@ sudo make install
 Or with `go install`:
 
 ```bash
-go install github.com/xmonader/wizask@latest
-go install github.com/xmonader/wizask/cmd/wizdo@latest
+go install github.com/xmonader/wizaskdo@latest
+go install github.com/xmonader/wizaskdo/cmd/wizdo@latest
 ```
 
 ## Usage

@@ -6,7 +6,7 @@ import (
 	"os"
 	"strings"
 
-	"wizask/pkg/llm"
+	"wizaskdo/pkg/llm"
 )
 
 var (

@@ -8,7 +8,7 @@ import (
 	"os/exec"
 	"strings"
 
-	"wizask/pkg/llm"
+	"wizaskdo/pkg/llm"
 )
 
 var (
