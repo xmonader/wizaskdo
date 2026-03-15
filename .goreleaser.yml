@@ -12,7 +12,7 @@ before:
 
 builds:
   - id: wizask
-    main: .
+    main: ./cmd/wizask
     binary: wizask
     env:
       - CGO_ENABLED=0

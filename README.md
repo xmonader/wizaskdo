@@ -55,7 +55,7 @@ sudo make install
 Or with `go install`:
 
 ```bash
-go install github.com/xmonader/wizaskdo@latest
+go install github.com/xmonader/wizaskdo/cmd/wizask@latest
 go install github.com/xmonader/wizaskdo/cmd/wizdo@latest
 ```
 
