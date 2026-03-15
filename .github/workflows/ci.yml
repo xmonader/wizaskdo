@@ -34,8 +34,8 @@ jobs:
 
     - name: Build binaries
       run: |
-        go build -v .
-        go build -v ./cmd/wizdo
+        go build -v -o wizask ./cmd/wizask
+        go build -v -o wizdo ./cmd/wizdo
 
     - name: Check binary runs
       run: |
