@@ -11,11 +11,16 @@ sudo cp wizask /usr/local/bin/
 
 ## Usage
 
+Quotes are optional for simple queries:
+
 ```bash
-wizask "how to find files larger than 100MB"
+wizask how to find files larger than 100MB
+wizask find large files
 wizask "compress all log files older than 7 days"
-wizask "show disk usage by directory"
+wizask 'grep "error" in /var/log'
 ```
+
+Use quotes when your query contains special characters (`*`, `|`, `$`, etc.)
 
 ## Setup
 
