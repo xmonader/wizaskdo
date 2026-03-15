@@ -2,6 +2,9 @@
 
 Ask AI for terminal commands directly from your shell.
 
+[![CI](https://github.com/xmonader/wizask/actions/workflows/ci.yml/badge.svg)](https://github.com/xmonader/wizask/actions/workflows/ci.yml)
+[![Release](https://github.com/xmonader/wizask/actions/workflows/release.yml/badge.svg)](https://github.com/xmonader/wizask/actions/workflows/release.yml)
+
 ## Tools
 
 ### `wizask` - Ask for commands
@@ -23,10 +26,44 @@ wizdo -y list files
 
 ## Installation
 
+### Pre-built Binaries
+
+Download from [GitHub Releases](https://github.com/xmonader/wizask/releases):
+
 ```bash
-go build -o wizask ./...
-go build -o wizdo ./cmd/wizdo
-sudo cp wizask wizdo /usr/local/bin/
+# Linux/macOS
+curl -L https://github.com/xmonader/wizask/releases/latest/download/wizask_Linux_x86_64.tar.gz | tar xz
+sudo mv wizask wizdo /usr/local/bin/
+
+# Or use wget
+wget https://github.com/xmonader/wizask/releases/latest/download/wizask_Linux_x86_64.tar.gz
+tar xzf wizask_Linux_x86_64.tar.gz
+sudo mv wizask wizdo /usr/local/bin/
+```
+
+### Homebrew
+
+```bash
+brew tap xmonader/tap
+brew install wizask
+```
+
+### Build from Source
+
+Requires Go 1.21+:
+
+```bash
+git clone https://github.com/xmonader/wizask.git
+cd wizask
+make build
+sudo make install
+```
+
+Or with `go install`:
+
+```bash
+go install github.com/xmonader/wizask@latest
+go install github.com/xmonader/wizask/cmd/wizdo@latest
 ```
 
 ## Usage
@@ -41,6 +78,21 @@ wizask 'grep "error" in /var/log'
 ```
 
 Use quotes when your query contains special characters (`*`, `|`, `$`, etc.)
+
+### Flags
+
+**wizask:**
+```bash
+wizask -v              # Show version
+wizask -version        # Show version
+```
+
+**wizdo:**
+```bash
+wizdo -y               # Auto-accept and execute
+wizdo -v               # Show version
+wizdo -version         # Show version
+```
 
 ## Setup
 
@@ -97,6 +149,22 @@ Defaults to `liquid/lfm2-8b-a1b` - **~$0.00000001/1k tokens** (extremely cheap).
 At this rate, 1000 queries cost less than $0.01.
 
 Override with `WIZASK_MODEL` env var.
+
+## Development
+
+```bash
+# Run tests
+make test
+
+# Build locally
+make build
+
+# Clean
+make clean
+
+# Release (requires goreleaser)
+make release-snapshot
+```
 
 ## License
 
