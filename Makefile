@@ -1,7 +1,7 @@
 .PHONY: build test clean run
 
 build:
-	go build -o wizask ./...
+	go build -o wizask .
 	go build -o wizdo ./cmd/wizdo
 
 test:
