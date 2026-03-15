@@ -1,5 +1,6 @@
-wizask
-wizdo
+# Compiled binaries (root only)
+/wizask
+/wizdo
 *.test
 coverage.out
 *.swp
