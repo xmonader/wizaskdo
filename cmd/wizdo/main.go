@@ -11,6 +11,12 @@ import (
 	"wizask/pkg/llm"
 )
 
+var (
+	version = "dev"
+	commit  = "none"
+	date    = "unknown"
+)
+
 const systemPrompt = `You are a terminal assistant. The user will ask you to perform a terminal command or system task.
 
 Your job is to:
@@ -29,13 +35,25 @@ Assistant: find /var/log -name "*.log" -mtime +7`
 
 func main() {
 	var autoYes bool
+	var showVersion bool
+
 	flag.BoolVar(&autoYes, "y", false, "Auto-accept and execute without confirmation")
+	flag.BoolVar(&showVersion, "version", false, "Show version")
+	flag.BoolVar(&showVersion, "v", false, "Show version (shorthand)")
 	flag.Parse()
 
+	if showVersion {
+		fmt.Printf("wizdo version %s (commit: %s, built: %s)\n", version, commit, date)
+		os.Exit(0)
+	}
+
 	if flag.NArg() < 1 {
-		fmt.Fprintln(os.Stderr, "Usage: wizdo [-y] <command description>")
+		fmt.Fprintln(os.Stderr, "Usage: wizdo [flags] <command description>")
 		fmt.Fprintln(os.Stderr, "Example: wizdo find large files")
 		fmt.Fprintln(os.Stderr, "         wizdo -y compress old logs")
+		fmt.Fprintln(os.Stderr, "\nFlags:")
+		fmt.Fprintln(os.Stderr, "  -y              Auto-accept and execute")
+		fmt.Fprintln(os.Stderr, "  -v, -version    Show version")
 		os.Exit(1)
 	}
 
