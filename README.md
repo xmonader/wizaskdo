@@ -29,11 +29,11 @@ Add to your `~/.bashrc` or `~/.zshrc` for persistence.
 
 ## Configuration
 
-**Model selection** (optional) - defaults to free Qwen3 Coder:
+**Model selection** (optional) - defaults to free Llama 3.2:
 
 ```bash
-export WIZASK_MODEL=qwen/qwen3-coder:free          # Free, coding-focused (default)
-export WIZASK_MODEL=meta-llama/llama-3.2-3b-instruct:free  # Free, fast
+export WIZASK_MODEL=meta-llama/llama-3.2-3b-instruct:free  # Free, fast (default)
+export WIZASK_MODEL=qwen/qwen3-coder:free          # Free, coding-focused
 export WIZASK_MODEL=minimax/minimax-m2.5:free       # Free, large context
 ```
 
