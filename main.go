@@ -12,7 +12,7 @@ import (
 )
 
 const (
-	defaultModel = "qwen/qwen3-coder:free"
+	defaultModel = "meta-llama/llama-3.2-3b-instruct:free"
 	apiURL       = "https://openrouter.ai/api/v1/chat/completions"
 	maxTokens    = 500
 	temperature  = 0.3

@@ -27,6 +27,18 @@ export OPENROUTER_API_KEY=your_key_here
 
 Add to your `~/.bashrc` or `~/.zshrc` for persistence.
 
+## Configuration
+
+**Model selection** (optional) - defaults to free Qwen3 Coder:
+
+```bash
+export WIZASK_MODEL=qwen/qwen3-coder:free          # Free, coding-focused (default)
+export WIZASK_MODEL=meta-llama/llama-3.2-3b-instruct:free  # Free, fast
+export WIZASK_MODEL=minimax/minimax-m2.5:free       # Free, large context
+```
+
+See all models: https://openrouter.ai/models
+
 ## Example Output
 
 ```
@@ -41,7 +53,8 @@ Add -delete to remove them (be careful!).
 
 ## Model
 
-Uses `qwen/qwen-2.5-coder-32b-instruct` by default - a cheap, capable model for coding tasks.
+Defaults to `qwen/qwen3-coder:free` - **free**, coding-specialized model.
+Override with `WIZASK_MODEL` env var.
 
 ## License
 
