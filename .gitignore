@@ -1,3 +1,7 @@
 wizask
+wizdo
 *.test
 coverage.out
+*.swp
+*.swo
+*~
