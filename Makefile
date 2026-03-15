@@ -5,7 +5,7 @@ build:
 	go build -o wizdo ./cmd/wizdo
 
 test:
-	go test ./...
+	go test ./pkg/...
 
 clean:
 	rm -f wizask wizdo
