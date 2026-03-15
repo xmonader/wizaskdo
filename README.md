@@ -2,11 +2,26 @@
 
 Ask AI for terminal commands directly from your shell.
 
+## Tools
+
+### `wizask` - Ask for commands
+Returns command + explanation (non-destructive):
+```bash
+wizask find large files
+```
+
+### `wizdo` - Execute commands
+Finds command, shows preview, asks confirmation, then executes:
+```bash
+wizdo compress old log files
+```
+
 ## Installation
 
 ```bash
 go build -o wizask ./...
-sudo cp wizask /usr/local/bin/
+go build -o wizdo ./cmd/wizdo
+sudo cp wizask wizdo /usr/local/bin/
 ```
 
 ## Usage
@@ -46,14 +61,29 @@ See all models: https://openrouter.ai/models
 
 ## Example Output
 
+### wizask (ask only)
 ```
-$ wizask "find all .log files older than 7 days"
+$ wizask find all .log files older than 7 days
 
 ```bash
 find /var/log -name "*.log" -mtime +7
 ```
-This finds all .log files in /var/log that are older than 7 days. 
+This finds all .log files in /var/log that are older than 7 days.
 Add -delete to remove them (be careful!).
+```
+
+### wizdo (execute)
+```
+$ wizdo show current date
+
+🔍 Will execute: date +"%Y-%m-%d"
+
+Proceed? [y/N]: y
+
+🚀 Executing: date +"%Y-%m-%d"
+2026-03-15
+
+✅ Done.
 ```
 
 ## Model
