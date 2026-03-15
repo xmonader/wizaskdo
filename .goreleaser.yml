@@ -102,21 +102,6 @@ release:
   prerelease: auto
   name_template: "{{.ProjectName}}-v{{.Version}}"
 
-brews:
-  - name: wizask
-    repository:
-      owner: xmonader
-      name: homebrew-tap
-    directory: Formula
-    homepage: https://github.com/xmonader/wizaskdo
-    description: "AI-powered terminal assistant"
-    license: MIT
-    test: |
-      system "#{bin}/wizask", "--help"
-    install: |
-      bin.install "wizask"
-      bin.install "wizdo"
-
 nfpms:
   - id: packages
     package_name: wizask
