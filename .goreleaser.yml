@@ -62,7 +62,7 @@ builds:
       - -s -w -X main.version={{.Version}} -X main.commit={{.Commit}} -X main.date={{.Date}}
 
 archives:
-  - format: tar.gz
+  - formats: [ 'tar.gz' ]
     name_template: >-
       {{ .ProjectName }}_
       {{- .Version }}_
@@ -73,18 +73,16 @@ archives:
       {{- if .Arm }}v{{ .Arm }}{{ end }}
     format_overrides:
       - goos: windows
-        format: zip
+        formats: [ 'zip' ]
     files:
       - README.md
       - LICENSE
-      - completions/*
-      - manpages/*
 
 checksum:
   name_template: 'checksums.txt'
 
 snapshot:
-  name_template: "{{ incpatch .Version }}-next"
+  version_template: "{{ incpatch .Version }}-next"
 
 changelog:
   sort: asc
@@ -99,25 +97,22 @@ changelog:
 release:
   github:
     owner: xmonader
-    name: wizask
+    name: wizaskdo
   draft: false
   prerelease: auto
   name_template: "{{.ProjectName}}-v{{.Version}}"
 
-brews:
+homebrews:
   - name: wizask
     repository:
       owner: xmonader
       name: homebrew-tap
     directory: Formula
-    homepage: https://github.com/xmonader/wizask
+    homepage: https://github.com/xmonader/wizaskdo
     description: "AI-powered terminal assistant"
     license: MIT
     test: |
       system "#{bin}/wizask", "--help"
-    dependencies:
-      - name: go
-        type: optional
     install: |
       bin.install "wizask"
       bin.install "wizdo"
@@ -126,7 +121,7 @@ nfpms:
   - id: packages
     package_name: wizask
     vendor: xmonader
-    homepage: https://github.com/xmonader/wizask
+    homepage: https://github.com/xmonader/wizaskdo
     maintainer: xmonader <xmonader@gmail.com>
     description: AI-powered terminal assistant
     license: MIT
