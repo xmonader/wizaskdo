@@ -54,6 +54,8 @@ Add -delete to remove them (be careful!).
 ## Model
 
 Defaults to `liquid/lfm2-8b-a1b` - **~$0.00000001/1k tokens** (extremely cheap).
+At this rate, 1000 queries cost less than $0.01.
+
 Override with `WIZASK_MODEL` env var.
 
 ## License
